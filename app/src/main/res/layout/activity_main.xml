@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+    <TextView
+        android:id="@+id/textView5"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Wydarzenie w Sudetach"
+        android:textSize="25dp"
+        android:textAlignment="center"/>
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:padding="0dp"
+        android:scaleType="fitXY"
+        android:src="@drawable/widok"/>
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="0 polubień"
+        android:gravity="end"
+        android:textSize="18dp"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/polub"
+            android:layout_width="205dp"
+            android:layout_height="wrap_content"
+            android:text="Polub" />
+
+
+        <Button
+            android:id="@+id/usun"
+            android:layout_width="205dp"
+            android:layout_height="wrap_content"
+            android:text="Usuń" />
+    </LinearLayout>
+
+
+    <EditText
+        android:id="@+id/mail"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="text"
+        android:hint="Podaj email:" />
+
+    <EditText
+        android:id="@+id/haslo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="text"
+        android:hint="Podaj hasło:" />
+
+    <EditText
+        android:id="@+id/powtorz"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="text"
+        android:hint="Powtórz hasło:" />
+
+    <Button
+        android:id="@+id/zapisz"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Zapisz"
+        android:layout_gravity="center"/>
+
+    <Button
+        android:id="@+id/zobacz"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="ZOBACZ UCZESTNIKA"
+        android:layout_gravity="center"/>
+
+    <TextView
+        android:id="@+id/textView7"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Obszar komunikatów"
+        android:textAlignment="center"/>
+
+
+</LinearLayout>
