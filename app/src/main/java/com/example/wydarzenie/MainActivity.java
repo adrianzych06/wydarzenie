@@ -1,6 +1,7 @@
 package com.example.wydarzenie;
 
 import android.os.Bundle;
+import android.text.InputType;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -19,6 +20,8 @@ public class MainActivity extends AppCompatActivity {
     private EditText mail;
     private EditText haslo;
     private EditText powtorz;
+    private TextView komunikat;
+    private String email5 ="";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,6 +36,10 @@ public class MainActivity extends AppCompatActivity {
         mail = findViewById(R.id.mail);
         haslo = findViewById(R.id.haslo);
         powtorz = findViewById(R.id.powtorz);
+        komunikat = findViewById(R.id.textView7);
+
+        haslo.setInputType(InputType.TYPE_CLASS_TEXT | InputType.TYPE_TEXT_VARIATION_PASSWORD);
+        powtorz.setInputType(InputType.TYPE_CLASS_TEXT | InputType.TYPE_TEXT_VARIATION_PASSWORD);
 
         polub.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -53,7 +60,28 @@ public class MainActivity extends AppCompatActivity {
         zapisz.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                String email = mail.getText().toString().trim();
+                String pass = haslo.getText().toString().trim();
+                String pass2 = powtorz.getText().toString().trim();
 
+                if(!email.contains("@")){
+                    komunikat.setText("Nieprawidłowy adres e-mail!");
+                } else if (!pass.equals(pass2)){
+                    komunikat.setText("Hasła się nie zgadzają!");
+                } else {
+                    komunikat.setText("Zarejestrowano: "+ email);
+                    email5 = email;
+                }
+            }
+        });
+        zobacz.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if(!email5.isEmpty()){
+                    komunikat.setText("zalogowany uczestnik: "+email5);
+                } else {
+                    komunikat.setText("Nie ma uczestnika! ");
+                }
             }
         });
         }
